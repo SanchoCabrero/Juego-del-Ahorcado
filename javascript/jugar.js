@@ -6,7 +6,7 @@ function jugar(){
     var letraPresionada = 0;
     document.onkeydown = function(evt){
         letraPresionada = evt;
-        if(soloLetras(letraPresionada.key)){
+        if(soloLetras(letraPresionada.keyCode)){
             var letraMinuscula = letraPresionada.key.toLowerCase();
             console.log(letraMinuscula);
             var hayLetra = false;
@@ -33,5 +33,8 @@ function jugar(){
 }
 
 function soloLetras(tecla){
-    return /^[a-zA-Z]+$/.test(tecla);
+    if(tecla > 64 && tecla < 91){
+        return true;
+    }
+
 }
