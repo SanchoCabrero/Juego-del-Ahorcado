@@ -30,9 +30,9 @@ iniciarJuego.addEventListener("click",function(){
 
 
     //llamar a la función que agrega la palabra
-    agregarPalabra();
-
+    jugar();
 
 });
 
-nuevoJuego.addEventListener("click",agregarPalabra);
+nuevoJuego.addEventListener("click",jugar);
+

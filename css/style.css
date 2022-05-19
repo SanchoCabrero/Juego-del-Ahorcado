@@ -11,6 +11,16 @@ main{
     width: 100%;
     height: 100%;
 }
+#adivinar-palabra{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    align-items: center;
+    justify-content: center;
+}
 .boton-azul{
     display: flex;
     flex-direction: row;
@@ -101,5 +111,23 @@ footer a{
 }
 .recuadro-letra{
     resize: none;
+    width: 30px;
+    height: 35px;
+    background: none;
+    margin-left: 10px;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    border-bottom-width: 5px;
+    border-bottom-color: #0A3871;
 
+    /*text*/
+    color: #0A3871;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
 }
