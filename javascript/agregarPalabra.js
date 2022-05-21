@@ -13,12 +13,22 @@ function agregarPalabra(palabraSorteada){
         letra.classList.add("recuadro-letra");
         letra.setAttribute("readonly",true);
         letra.setAttribute("id","letra " + i);
-        //letra.textContent = palabraSorteada[i].toUpperCase();
-        //letra.style.visibility = "hidden";
+
         
     }
 }
 
-function mostrarLetra(){
+function agregarLetraErrada(letraMinuscula){
+    var letrasErradas = document.getElementById("letras-erradas");
+    var letraErrada = document.createElement("textarea");
+    letraErrada.classList.add("letra-errada");
+    letraErrada.textContent = letraMinuscula.toLocaleUpperCase();
+    letrasErradas.appendChild(letraErrada);
+}
 
+function borrarLetrasErradas(){
+    var letrasErradas = document.getElementById("letras-erradas");
+    while (letrasErradas.hasChildNodes()) {
+        letrasErradas.removeChild(letrasErradas.firstChild);
+      }
 }

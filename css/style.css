@@ -11,6 +11,17 @@ main{
     width: 100%;
     height: 100%;
 }
+#timer{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: absolute;
+    font-weight: bold;
+    font-size: 24px;
+    right: 10px;
+    color: #0A3871;
+
+}
 #adivinar-palabra{
     display: flex;
     flex-direction: row;
@@ -18,6 +29,18 @@ main{
     position: absolute;
     width: 50%;
     left: 25%;
+    top: 55%;
+    align-items: center;
+    justify-content: center;
+}
+#letras-erradas{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    top: 65%;
     align-items: center;
     justify-content: center;
 }
@@ -115,7 +138,6 @@ footer a{
     height: 35px;
     background: none;
     margin-left: 10px;
-    outline: none;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -127,7 +149,24 @@ footer a{
     color: #0A3871;
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
+.letra-errada{
+    resize: none;
+    width: 30px;
+    height: 35px;
+    background: none;
+    margin-left: 10px;
+    outline: none;
+    border: none;
+
+    /*text*/
+    color: red;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bold;
     font-size: 24px;
     text-align: center;
 }
