@@ -17,44 +17,52 @@ function jugar(){
             console.log(letraMinuscula);
             var hayLetra = false;
 
-            if(contadorAdivinadas < (palabraSorteada.length - 1)){
-                for(var i = 0; i < palabraSorteada.length; i++){
-                    if(letraMinuscula == palabraSorteada[i]){
+            for(var i = 0; i < palabraSorteada.length; i++){
+                if(letraMinuscula == palabraSorteada[i]){
+                    var repetida = false;
+                    for(var e = 0; e < letrasAdivinadas.length; e = e + 2){
+                        if(letraMinuscula == letrasAdivinadas[e] && i == letrasAdivinadas[e + 1]){
+                            repetida = true;
+                            hayLetra = true;
+                            break;
+                        }
+                    }
+                    if(!repetida){
                         var letraAMostrar = document.getElementById("letra " + i);
                         letraAMostrar.textContent = palabraSorteada[i].toLocaleUpperCase();
                         hayLetra = true;
-                        contadorAdivinadas++;
-                        letrasAdivinadas.push(letraMinuscula);
+                        letrasAdivinadas.push(letraMinuscula, i);
                         console.log(contadorAdivinadas);
                         console.log(letrasAdivinadas);
                         console.log(palabraSorteada.length);
-                    }else{
-                        if(hayLetra == false && i == (palabraSorteada.length -1)){
-                            var encontrada = false;
-                            for(var e = 0; e < letrasErradas.length; e++){
-                                if(letraMinuscula == letrasErradas[e]){
-                                    encontrada = true;
-                                    break;
-                                }
-                            }
-                            if(!encontrada){
-                                letrasErradas.push(letraMinuscula);
-                                console.log(letrasErradas);
-                                agregarLetraErrada(letraMinuscula);
-                                contador++;
-                                console.log("contador " + contador);
-                                if(contador == 5){  
-                                    perdioElJuego();
-                                }
-                            }
-
+                        contadorAdivinadas++;
+                        if(contadorAdivinadas == (palabraSorteada.length)){
+                            haGanado(palabraSorteada);
                         }
                     }
-                } 
-            }else{
-                alert("Ha ganado!!!");
-                jugar();
-            }
+                }else{
+                    if(hayLetra == false && i == (palabraSorteada.length -1)){
+                        var encontrada = false;
+                        for(var e = 0; e < letrasErradas.length; e++){
+                            if(letraMinuscula == letrasErradas[e]){
+                                encontrada = true;
+                                break;
+                            }
+                        }
+                        if(!encontrada){
+                            letrasErradas.push(letraMinuscula);
+                            console.log(letrasErradas);
+                            agregarLetraErrada(letraMinuscula);
+                            contador++;
+                            console.log("contador " + contador);
+                            if(contador == 5){  
+                                perdioElJuego();
+                            }
+                        }
+
+                    }
+                }
+            } 
 
         }
     }
@@ -66,7 +74,3 @@ function soloLetras(tecla){
     }
 }
 
-function perdioElJuego(){
-    alert("Perdió el juego");
-    jugar();
-}
