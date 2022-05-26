@@ -1,5 +1,6 @@
 
 function jugar(){
+    focus();
     borrarLetrasErradas();
     borrarHorca(); 
     //timer(120);
