@@ -8,10 +8,11 @@ function agregarPalabra(palabraSorteada){
         palabra.appendChild(letra);
         letra.classList.add("recuadro-letra");
         letra.setAttribute("readonly",true);
+        letra.setAttribute("type","text");
         letra.setAttribute("id","letra " + i);
 
     }
-    palabra.focus();
+    document.getElementById("letra 0").focus();
 }
 function dibujarLetraCorrecta(palabraSorteada, i){
     var letraAMostrar = document.getElementById("letra " + i);
