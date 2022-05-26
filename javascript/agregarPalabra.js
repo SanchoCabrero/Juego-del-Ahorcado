@@ -1,6 +1,5 @@
 function agregarPalabra(palabraSorteada){
     borrarPalabra();
-    var letras = document.querySelector("#adivinar-palabra");
 
     for(var i = 0; i < palabraSorteada.length; i++){
 
@@ -11,8 +10,8 @@ function agregarPalabra(palabraSorteada){
         letra.setAttribute("readonly",true);
         letra.setAttribute("id","letra " + i);
 
-        
     }
+    palabra.focus();
 }
 function dibujarLetraCorrecta(palabraSorteada, i){
     var letraAMostrar = document.getElementById("letra " + i);
