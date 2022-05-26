@@ -1,11 +1,12 @@
 
 function jugar(){
- 
     borrarLetrasErradas();
-    timer(120);
+    borrarHorca(); 
+    //timer(120);
     var palabraSorteada = sortearPalabra();
     agregarPalabra(palabraSorteada);
     var contador = 0;
+    dibujarHorca(contador);
     var letrasErradas = [];
     var contadorAdivinadas = 0;
     var letrasAdivinadas = [];
@@ -28,17 +29,14 @@ function jugar(){
                         }
                     }
                     if(!repetida){
-                        var letraAMostrar = document.getElementById("letra " + i);
-                        letraAMostrar.textContent = palabraSorteada[i].toLocaleUpperCase();
+                        dibujarLetraCorrecta(palabraSorteada, i);
                         hayLetra = true;
                         letrasAdivinadas.push(letraMinuscula, i);
                         console.log(contadorAdivinadas);
                         console.log(letrasAdivinadas);
                         console.log(palabraSorteada.length);
                         contadorAdivinadas++;
-                        if(contadorAdivinadas == (palabraSorteada.length)){
-                            haGanado(palabraSorteada);
-                        }
+                        ganar(palabraSorteada,contadorAdivinadas);  
                     }
                 }else{
                     if(hayLetra == false && i == (palabraSorteada.length -1)){
@@ -52,12 +50,11 @@ function jugar(){
                         if(!encontrada){
                             letrasErradas.push(letraMinuscula);
                             console.log(letrasErradas);
-                            agregarLetraErrada(letraMinuscula);
+                            dibujarLetraIncorrecta(letraMinuscula);
                             contador++;
+                            dibujarHorca(contador);
                             console.log("contador " + contador);
-                            if(contador == 5){  
-                                perdioElJuego();
-                            }
+                            perder(contador);
                         }
 
                     }
