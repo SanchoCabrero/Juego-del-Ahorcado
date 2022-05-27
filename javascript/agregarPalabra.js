@@ -12,7 +12,6 @@ function agregarPalabra(palabraSorteada){
         letra.setAttribute("id","letra " + i);
 
     }
-    document.getElementById("letra 0").focus();
 }
 function dibujarLetraCorrecta(palabraSorteada, i){
     var letraAMostrar = document.getElementById("letra " + i);

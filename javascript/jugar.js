@@ -11,6 +11,12 @@ function jugar(){
     var contadorAdivinadas = 0;
     var letrasAdivinadas = [];
     var letraPresionada = 0;
+    if(window.screen.width < 1350){
+        prompt();
+        console.log("saldria teclado");
+    }
+
+
     document.onkeydown = function(evt){
         letraPresionada = evt;
         if(soloLetras(letraPresionada.keyCode)){
