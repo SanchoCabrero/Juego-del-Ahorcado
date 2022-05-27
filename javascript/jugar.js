@@ -12,12 +12,11 @@ function jugar(){
     var letrasAdivinadas = [];
     var letraPresionada = 0;
     if(window.screen.width < 1350){
-        var letra1 = document.getElementById("letra 1").focus();
-        console.log(letra1);
-
+        var letra1 = document.getElementById("letra 1");
+        letra1.addEventListener("click",function(){
+            letra1.focus();
+        });
     }
-
-
     document.onkeydown = function(evt){
         letraPresionada = evt;
         if(soloLetras(letraPresionada.keyCode)){
