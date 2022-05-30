@@ -256,8 +256,11 @@ header{
     top: 83%;
 }
 #horca{
-    width: 100%;
-    height: auto;
+    position: absolute;
+    width: auto;
+    height: 200px;
+    top: 20%;
+    left: 15%;
 
 }
 #adivinar-palabra{
@@ -286,6 +289,43 @@ header{
 #input-palabra{
     width: 80%;
     height: 325px;
+}
+#verificar{
+    display: inline-block;
+    flex-direction: row;
+    position: absolute;
+    text-align: center;
+    width: 30%;
+    height: 50px;
+    margin: auto 0 auto 0;
+    top: 13%;
+    left: 65%;
+    font-size: 18px;
+    padding: 10px;
+}
+#entrada{
+    display: inline-block;
+    flex-direction: row;
+    position: absolute;
+    text-align: center;
+    width: 20%;
+    height: auto;
+    margin: auto 0 auto 0;
+    top: 13%;
+    left: 5%;
+    font-size: 18px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 32px;
+
+    /*text*/
+    color:#0A3871;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+
 }
 }
 @media screen and (min-device-width: 481px) and (max-device-width: 821px) { 
@@ -345,6 +385,7 @@ header{
     #input-palabra{
         width: 80%;
     }
+
     }
     @media screen and (min-device-width: 821px) and (max-device-width: 1368px) { 
 
