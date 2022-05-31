@@ -35,6 +35,10 @@ iniciarJuego.addEventListener("click",function(){
 });
 
 nuevoJuego.addEventListener("click",function(){
+    if(window.screen.width < 1369){
+        botones.removeChild(botones.lastChild);
+        botones.removeChild(botones.lastChild);
+    }
     borrarLetrasErradas();
     borrarHorca();
     jugar();
@@ -45,8 +49,16 @@ desistir.addEventListener("click",function(){
     noDetectarLetras();
 
     //elimino botones nuevo juego y desistir
-    botones.removeChild(botones.lastChild);
-    botones.removeChild(botones.lastChild);
+    if(window.screen.width < 1350){
+        botones.removeChild(botones.lastChild);
+        botones.removeChild(botones.lastChild);
+        botones.removeChild(botones.lastChild);
+        botones.removeChild(botones.lastChild);
+    }else{
+        botones.removeChild(botones.lastChild);
+        botones.removeChild(botones.lastChild);
+    }
+
 
     //borro el dibujo, la palabra y las letras erradas
     dibujo.removeChild(dibujo.firstChild);

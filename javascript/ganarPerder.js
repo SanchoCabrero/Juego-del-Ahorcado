@@ -1,9 +1,14 @@
 var sec;
+var botones = document.getElementById("botones");
 function perder(contador){
         if(contador == 9 ){
             noDetectarLetras();
             setTimeout(function(){
                 alert("Fin del juego. Intentelo nuevamente...");
+                if(window.screen.width < 1369){
+                    botones.removeChild(botones.lastChild);
+                    botones.removeChild(botones.lastChild);
+                }
                 jugar();
             },500);
         }
@@ -17,6 +22,10 @@ function ganar(palabraSorteada,contadorAdivinadas){
         }
             setTimeout(function(){
                 alert("Adivinó!!!");
+                if(window.screen.width < 1369){
+                    botones.removeChild(botones.lastChild);
+                    botones.removeChild(botones.lastChild);
+                }
                 jugar();
             },500);
         }

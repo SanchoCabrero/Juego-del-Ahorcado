@@ -1,6 +1,6 @@
 
 function jugar(){
-    if(window.screen.width < 1350){
+    if(window.screen.width < 1369){
     agregarInputMobile();
     jugarMobile();
     }else{
@@ -149,7 +149,4 @@ function jugarMobile(){
 
 
 }
-function esperarNuevaLetra(entrada){
-    entrada = "";
-    entrada.focus;
-}
+

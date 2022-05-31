@@ -257,9 +257,9 @@ header{
 }
 #horca{
     position: absolute;
-    width: auto;
-    height: 200px;
-    top: 20%;
+    width: 80%;
+    height: auto;
+    top: 25%;
     left: 15%;
 
 }
@@ -361,8 +361,11 @@ header{
         height: 100px;
     }
     #horca{
-        width: 100%;
+        position: absolute;
+        width: 70%;
         height: auto;
+        top: 25%;
+        left: 15%;
     
     }
     #adivinar-palabra{
@@ -385,7 +388,43 @@ header{
     #input-palabra{
         width: 80%;
     }
-
+    #verificar{
+        display: inline-block;
+        flex-direction: row;
+        position: absolute;
+        text-align: center;
+        width: 30%;
+        height: 50px;
+        margin: auto 0 auto 0;
+        top: 13%;
+        left: 65%;
+        font-size: 18px;
+        padding: 10px;
+    }
+    #entrada{
+        display: inline-block;
+        flex-direction: row;
+        position: absolute;
+        text-align: center;
+        width: 20%;
+        height: auto;
+        margin: auto 0 auto 0;
+        top: 13%;
+        left: 5%;
+        font-size: 18px;
+        padding: 10px;
+        outline: none;
+        border: none;
+        border-radius: 32px;
+    
+        /*text*/
+        color:#0A3871;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+    
+    }
     }
     @media screen and (min-device-width: 821px) and (max-device-width: 1368px) { 
 
@@ -420,8 +459,11 @@ header{
             height: 70px;
         }
         #horca{
-            width: 450px;
-            height: auto;
+            position: absolute;
+            width: auto;
+            height: 40%;
+            top: 25%;
+            left: 30%
         
         }
         #adivinar-palabra{
@@ -443,5 +485,42 @@ header{
         
         #input-palabra{
             width: 80%;
+        }
+        #verificar{
+            display: inline-block;
+            flex-direction: row;
+            position: absolute;
+            text-align: center;
+            width: 30%;
+            height: 50px;
+            margin: auto 0 auto 0;
+            top: 13%;
+            left: 65%;
+            font-size: 18px;
+            padding: 10px;
+        }
+        #entrada{
+            display: inline-block;
+            flex-direction: row;
+            position: absolute;
+            text-align: center;
+            width: 20%;
+            height: auto;
+            margin: auto 0 auto 0;
+            top: 13%;
+            left: 5%;
+            font-size: 18px;
+            padding: 10px;
+            outline: none;
+            border: none;
+            border-radius: 32px;
+        
+            /*text*/
+            color:#0A3871;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+        
         }
         }
