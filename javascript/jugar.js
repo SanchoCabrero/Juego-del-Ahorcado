@@ -28,7 +28,8 @@ function jugarDesktop(){
     var letraPresionada = 0;
     document.onkeydown = function(evt){
         letraPresionada = evt;
-        if(soloLetras(letraPresionada.keyCode)){
+        console.log(letraPresionada);
+        if(verificarPalabraNueva(letraPresionada.key)){
             var letraMinuscula = letraPresionada.key.toLowerCase();
             console.log(letraMinuscula);
             var hayLetra = false;
@@ -93,7 +94,10 @@ function jugarMobile(){
     var letrasAdivinadas = [];
     var verificar = document.getElementById("verificar");
     verificar.addEventListener("click",function(){
-        var letraMinuscula = document.getElementById("entrada").value.toLowerCase();
+        var letra = document.getElementById("entrada");
+        var letraMinuscula = letra.value.toLowerCase();
+        console.log(letraMinuscula);
+        console.log(verificarPalabraNueva(letraMinuscula));
         if(verificarPalabraNueva(letraMinuscula)){
                 var hayLetra = false;
                 for(var i = 0; i < palabraSorteada.length; i++){
@@ -144,6 +148,10 @@ function jugarMobile(){
                         }
                     }
                 } 
+        }else{
+            alert("Escriba una letra válida. No se admiten espacios, números o símbolos");
+            letra.value = "";
+            letra.focus();
         }
     })
 

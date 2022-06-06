@@ -118,7 +118,7 @@ cancelar.addEventListener("click",function(){
 guardar.addEventListener("click", function(){
 
     //guardo la palabra
-    if(inputPalabra.value == "" || !verificarPalabraNueva(inputPalabra.value)){
+    if(!verificarPalabraNueva(inputPalabra.value)){
         alert("Escriba una palabra, sin números, espacios ni símbolos especiales...");
     }else{
     sumarPalabra();
@@ -162,6 +162,10 @@ function agregarDibujo(){
     canvas.setAttribute("height","400px");
 }
 function verificarPalabraNueva(palabra){
-    return /^[a-zA-Z\s.,]+$/.test(palabra);
+    if(/^[ñA-Za-z _]*[ñA-Za-z][ñA-Za-z _]*$/.test(palabra) && palabra.search(" ") == -1){
+       return true;
+    }else{
+         return false;
+    }
 }
 
